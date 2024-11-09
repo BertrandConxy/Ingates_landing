@@ -1,6 +1,7 @@
 "use client";
 import VideoThumb from "@/public/images/open_gate_2.jpeg";
 import ModalVideo from "@/components/modal-video";
+import { logEvent } from "@/app/(default)/analytics";
 
 
 const scrollToCTA = () => {
@@ -11,6 +12,9 @@ const scrollToCTA = () => {
 };
 
 export default function HeroHome() {
+  const handleClick = (category="CTA", action="Click", label:string) => {
+    logEvent(category, action, label); // Customize category, action, and label as desired
+  };
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -52,6 +56,7 @@ export default function HeroHome() {
                   <a
                     className="btn relative w-full bg-gradient-to-b from-blue-800 to-blue-800/60 bg-[length:100%_100%] bg-[bottom] text-gray-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,theme(colors.gray.800),theme(colors.gray.700),theme(colors.gray.800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-[length:100%_150%] sm:ml-4 sm:w-auto"
                     href="public/pdf/Ingates_catalog.pdf" download="Ingates_catalog.pdf"
+                    onClick={() => handleClick("CTA", "Download", "Catalog")}
                   >
                     Get Catalog
                   </a>
