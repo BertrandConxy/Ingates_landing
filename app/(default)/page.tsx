@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Features />
       <Workflows />
+      <Features />
       <Testimonials />
       <Cta />
     </>

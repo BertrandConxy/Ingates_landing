@@ -1,5 +1,14 @@
+"use client";
 import VideoThumb from "@/public/images/open_gate_2.jpeg";
 import ModalVideo from "@/components/modal-video";
+
+
+const scrollToCTA = () => {
+  const CtaSection = document.getElementById('Cta-section');
+  if (CtaSection) {
+    CtaSection.scrollIntoView({ behavior: 'smooth'});
+  }
+};
 
 export default function HeroHome() {
   return (
@@ -29,7 +38,7 @@ export default function HeroHome() {
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
                     className="btn group mb-4 w-full bg-gradient-to-t from-green-600 to-green-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_theme(colors.white/.16)] hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                    href="#0"
+                     onClick={scrollToCTA}
                   >
                     <span className="relative inline-flex items-center">
                     Upgrade Your Gate Today
@@ -42,7 +51,7 @@ export default function HeroHome() {
                 <div data-aos="fade-up" data-aos-delay={600}>
                   <a
                     className="btn relative w-full bg-gradient-to-b from-blue-800 to-blue-800/60 bg-[length:100%_100%] bg-[bottom] text-gray-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,theme(colors.gray.800),theme(colors.gray.700),theme(colors.gray.800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-[length:100%_150%] sm:ml-4 sm:w-auto"
-                    href="#0"
+                    href="public/pdf/Ingates_catalog.pdf" download="Ingates_catalog.pdf"
                   >
                     Get Catalog
                   </a>
