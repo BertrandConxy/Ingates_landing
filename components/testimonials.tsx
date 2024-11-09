@@ -1,53 +1,40 @@
 "use client";
 
 import useMasonry from "@/utils/useMasonry";
-import Image, { StaticImageData } from "next/image";
-import TestimonialImg01 from "@/public/images/testimonial-01.jpg";
-import TestimonialImg02 from "@/public/images/testimonial-02.jpg";
-import TestimonialImg03 from "@/public/images/testimonial-03.jpg";
-import TestimonialImg04 from "@/public/images/testimonial-04.jpg";
-import TestimonialImg05 from "@/public/images/testimonial-05.jpg";
-import TestimonialImg06 from "@/public/images/testimonial-06.jpg";
 
 const testimonials = [
   {
-    img: TestimonialImg01,
     name: "Emmanuel P.",
     location: "Jali, Kigali",
     content:
       "Switching to the SGD10 Smart has been a game-changer us. We used to spend several minutes each day waiting for someone to open the gate, but now it’s instant with just a tap on the app. It’s incredibly convenient, especially on rainy days when I don’t want to step out of the car. Ingates’ team made the setup process easy and stress-free, which we appreciated.",
   },
   {
-    img: TestimonialImg02,
-    name: "Andrew K.",
+    name: "David K.",
     location: "Kicukiro, Kigali",
     content:
       "I’ve always been cautious about security, so finding a reliable automated gate system was a top priority. The SGD10 Smart gives us peace of mind with its tamper-resistant design and battery backup. I’d recommend Ingates to anyone looking to upgrade their gate system.",
   },
   {
-    img: TestimonialImg03,
-    name: "Lucy D.",
+    name: "Jean De Dieu N.",
     location: "Gisozi, Kigali",
     content:
       "Controlling my gate from my phone is a game-changer, and the customer service was exceptional. Ingates has really impressed us.",
   },
   {
-    img: TestimonialImg04,
-    name: "Pavel M.",
+    name: "John M.",
     location: "Shyorongi, Kigali",
     content:
       "What I love most about Ingates is their commitment to customer service. I had a few questions about maintenance, and they were quick to respond and very helpful. The SGD10 Smart works flawlessly, and I love being able to control the gate from my phone. It’s convenient, secure, and has truly added a touch of modernity to our home.",
   },
   {
-    img: TestimonialImg05,
-    name: "Miriam E.",
+    name: "Alexis K.",
     location: "Kicukiro, Kigali",
     content:
       "The SGD10 Smart has been a lifesaver during my busy mornings. With two kids in the car, I don’t have time to fuss with opening the gate manually. This system has made my routine so much easier – just a single click, and we’re on our way.",
   },
   {
-    img: TestimonialImg06,
-    name: "Eloise V.",
+    name: "Charlese M.",
     location: "Kacyiru, Kigali",
     content:
       "I never thought an automated gate could be this affordable and dependable. Even during power cuts, it keeps working without a hitch.",
@@ -96,7 +83,6 @@ export function Testimonial({
   children,
 }: {
   testimonial: {
-    img: StaticImageData;
     name: string;
     location: string;
     content: string;
@@ -112,13 +98,6 @@ export function Testimonial({
           {children}
         </p>
         <div className="flex items-center gap-3">
-          <Image
-            className="inline-flex shrink-0 rounded-full"
-            src={testimonial.img}
-            width={36}
-            height={36}
-            alt={testimonial.name}
-          />
           <div className="text-sm font-medium text-gray-200">
             <span>{testimonial.name}</span>
             <span className="text-gray-700"> - </span>
