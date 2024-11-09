@@ -1,9 +1,11 @@
-import "./css/style.css";
+"use client";
 
+import "./css/style.css";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-
 import Header from "@/components/ui/header";
+import { logPageView, initGA } from "./(default)/analytics";
+import React, { useEffect } from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,6 +45,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    initGA();
+    logPageView();
+  }, []);
   return (
     <html lang="en">
       <body
